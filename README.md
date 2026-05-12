@@ -8,7 +8,7 @@ A lean LaTeX template for STEM assignments, optimised for fast compilation on Ov
  
 ## Purpose
  
-This template is intentionally stripped down. Several packages that improve the final appearance of the document — such as `tikz`, `pgfplots`, `microtype`, and heading formatters are commented out or removed to keep Overleaf compile times short. The trade-off is that the document will not look as polished as the full template, but it will compile quickly and reliably during collaboration.
+This template is intentionally stripped down. Several packages that improve the final appearance of the document such as `tikz`, `pgfplots`, `microtype`, and heading formatters are commented out or removed to keep Overleaf compile times short. The trade-off is that the document will not look as polished as the full template, but it will compile quickly and reliably during collaboration.
  
 When your content is finished, transfer your `content.tex` file to the full template and compile locally for the final submission-ready PDF.
  
