@@ -16,17 +16,17 @@
 \definecolor{ScienceSkyBlueDark}{HTML}{065C87}
 \definecolor{LassondeNavy}{HTML}{003366}
 \providecommand{\metaThemeColour}{}
-\ifx\metaThemeColour\empty
-\colorlet{themecolour}{DefaultBlue}%
-\else
-\StrLeft{\metaThemeColour}{1}[\@firstchar]%
-\if#\@firstchar
-\StrGobbleLeft{\metaThemeColour}{1}[\@hexpure]%
-\definecolor{themecolour}{HTML}{\@hexpure}%
-\else
-\colorlet{themecolour}{\metaThemeColour}%
-\fi
-\fi
+\ifthenelse{\equal{\metaThemeColour}{}}{%
+	\colorlet{themecolour}{DefaultBlue}%
+}{%
+	\StrLeft{\metaThemeColour}{1}[\@firstchar]%
+	\if\@firstchar#%
+	\StrGobbleLeft{\metaThemeColour}{1}[\@hexpure]%
+	\definecolor{themecolour}{HTML}{\@hexpure}%
+	\else
+	\colorlet{themecolour}{\metaThemeColour}%
+	\fi
+}
 \colorlet{linkcolour}{themecolour}
 \colorlet{citecolour}{themecolour}
 \colorlet{urlcolour}{themecolour}
