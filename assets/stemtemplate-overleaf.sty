@@ -3,7 +3,7 @@
 % Licensed under the MIT License - see LICENSE file for details
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{assets/stemtemplate-overleaf}[2026/05/10 STEM Template (Overleaf)]
+\ProvidesPackage{assets/stemtemplate-overleaf}[2026/05/12 STEM Template (Overleaf)]
 
 % CONDITIONALS
 \usepackage{xifthen}
@@ -39,24 +39,11 @@
 \ifthenelse{\equal{\metaLineSpacing}{double}}{\doublespacing}{}
 \usepackage{pdflscape}
 
-% LANGUAGE
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% LANGUAGE % FONT
 \usepackage[english]{babel}
-
-% FONT SELECTION
-\usepackage{plex-serif}
-\IfFileExists{OT1IBMPlexSerif-TLF.fd}{%
-	\newcommand{\seriftext}[1]{{\usefont{T1}{IBMPlexSerif-TLF}{m}{n} ##1}}%
-}{%
-	\newcommand{\seriftext}[1]{{\usefont{T1}{plxSerif-TLF}{m}{n} ##1}}%
-}
-\usepackage{plex-sans}
-\IfFileExists{OT1IBMPlexSans-TLF.fd}{%
-	\newcommand{\sansseriftext}[1]{{\usefont{T1}{IBMPlexSans-TLF}{m}{n} ##1}}%
-}{%
-	\newcommand{\sansseriftext}[1]{{\usefont{T1}{plxSans-TLF}{m}{n} ##1}}%
-}
+% \usepackage{fontspec} % don't uncomment
+\newcommand{\seriftext}[1]{{\rmfamily #1}}
+\newcommand{\sansseriftext}[1]{{\sffamily #1}}
 \ifthenelse{\equal{\metaDefaultFont}{sans}}{%
 	\renewcommand{\familydefault}{\sfdefault}%
 }{%
@@ -64,7 +51,7 @@
 }
 
 % SPACING AROUND HEADINGS
-% \usepackage{titlesec} - don't uncomment
+% \usepackage{titlesec} % don't uncomment
 
 % MATH
 \usepackage{amsmath, amssymb, amsfonts}
@@ -130,7 +117,7 @@
 \ifthenelse{\equal{\metaNumberFigures}{true}}{\numberwithin{figure}{section}}{}
 \ifthenelse{\equal{\metaNumberTables}{true}}{\numberwithin{table}{section}}{}
 
-% DIAGRAMS & PLOTS — uncomment to use
+% DIAGRAMS & PLOTS - uncomment to use
 % \usepackage{tikz}
 % \usepackage{pgfplots}
 % \pgfplotsset{compat=1.18}
@@ -165,7 +152,7 @@
 \crefname{lstlisting}{Listing}{Listings}
 
 % TYPOGRAPHY
-% \usepackage{microtype} - don't uncomment
+% \usepackage{microtype} % don't uncomment
 \usepackage{xurl}
 \setlength{\emergencystretch}{3em}
 \usepackage{indentfirst}
@@ -212,7 +199,7 @@
 	\usepackage{draftwatermark}
 	\SetWatermarkText{\metaWatermarkText}
 	\SetWatermarkScale{\metaWatermarkScale}}
-% \usepackage{lipsum} - don't uncomment
+% \usepackage{lipsum} % don't uncomment
 
 % HEADER & FOOTER
 \usepackage{fancyhdr}
