@@ -127,14 +127,6 @@ Note that uncommenting `tikz`, `pgfplots`, or `circuitikz` will noticeably incre
  
 ---
  
-## Logo
- 
-The faculty logo is not included in this repository. Download the official logo from the [York University Brand Assets page](https://www.yorku.ca/brand/assets-downloads/faculty-assets/) and upload it to the `assets/` folder on Overleaf. Then update `\metaLogoPath` in the metadata.
- 
-Leave `\metaLogoPath` empty to display no logo.
- 
----
- 
 ## Acknowledgements
  
 This template was developed with the assistance of generative AI.
