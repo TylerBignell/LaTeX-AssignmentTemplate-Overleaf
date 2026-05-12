@@ -1,6 +1,6 @@
 # LaTeX Assignment Template — Lean Overleaf Version
  
-A lean LaTeX template for STEM assignments, optimised for fast compilation on Overleaf. This is the collaboration version of the full template — use it to write and collaborate on Overleaf, then transfer your content to the full template for final local compilation.
+A lean LaTeX template for STEM assignments, optimised for fast compilation on Overleaf. This is the collaboration version of the full template. Use it to write and collaborate on Overleaf, then transfer your content to the full template for final local compilation.
  
 > **Full template:** https://github.com/TylerBignell/LaTeX-AssignmentTemplate
  
@@ -8,7 +8,7 @@ A lean LaTeX template for STEM assignments, optimised for fast compilation on Ov
  
 ## Purpose
  
-This template is intentionally stripped down. Several packages that improve the final appearance of the document — such as `tikz`, `pgfplots`, `microtype`, and heading formatters — are commented out or removed to keep Overleaf compile times short. The trade-off is that the document will not look as polished as the full template, but it will compile quickly and reliably during collaboration.
+This template is intentionally stripped down. Several packages that improve the final appearance of the document — such as `tikz`, `pgfplots`, `microtype`, and heading formatters are commented out or removed to keep Overleaf compile times short. The trade-off is that the document will not look as polished as the full template, but it will compile quickly and reliably during collaboration.
  
 When your content is finished, transfer your `content.tex` file to the full template and compile locally for the final submission-ready PDF.
  
@@ -27,7 +27,7 @@ Both templates use identical metadata fields, environments, and commands. Your c
  
 1. Fill in the metadata block at the top of `main.tex`
 2. Write your content in `content.tex`
-3. Compile on Overleaf — bibliography is handled automatically
+3. Compile on Overleaf, bibliography is handled automatically
 ---
  
 ## File Structure
