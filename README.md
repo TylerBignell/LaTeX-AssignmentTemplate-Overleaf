@@ -39,8 +39,8 @@ Both templates use identical metadata fields, environments, and commands. Your c
 │   └── example.pdf                   ← Compiled example from the full template
 ├── figures/                          ← Place your images here
 ├── main.tex                          ← Edit metadata here, compile this file
-├── content.tex (create this)         ← Write your content here and transfer to the full template
-└── references.bib (create this)      ← Your bibliography entries
+├── content.tex (create this file)    ← Write your content here and transfer to the full template
+└── references.bib (create this file) ← Your bibliography entries
 ```
  
 The `example.pdf` is compiled from the full template so you can see what the finished document looks like locally. Read it alongside `example.tex` to understand how each feature is used.
@@ -79,9 +79,13 @@ For a full explanation of every metadata field and what it does, see the full te
 \newcommand{\metaBibStyle}{ieee}               % ieee or apa
 \newcommand{\metaShowBackref}{true}            % true or false
 \newcommand{\metaShowUnusedCitations}{false}   % true or false
+
+% FONT
+\newcommand{\metaSerifFont}{}         % Unused in this template
+\newcommand{\metaSansFont}{}          % Unused in this template
+\newcommand{\metaDefaultFont}{sans}   % sans or serif (selects which font family is used for body text)
  
 % MISC
-\newcommand{\metaDefaultFont}{sans}            % sans or serif
 \newcommand{\metaLineSpacing}{onehalf}         % single, onehalf, or double
 \newcommand{\metaShowTodo}{true}               % true or false
 \newcommand{\metaWatermarkText}{}              % Leave empty for no watermark
@@ -89,9 +93,9 @@ For a full explanation of every metadata field and what it does, see the full te
  
 % COLOURS
 \newcommand{\metaThemeColour}{}   % Hex code, colour name, or leave empty for default
-\newcommand{\metaLinkColour}{}    % Doesn't work in this template, \metaThemeColour controls this
-\newcommand{\metaCiteColour}{}    % Doesn't work in this template, \metaThemeColour controls this
-\newcommand{\metaUrlColour}{}     % Doesn't work in this template, \metaThemeColour controls this
+\newcommand{\metaLinkColour}{}    % Unused in this template
+\newcommand{\metaCiteColour}{}    % Unused in this template
+\newcommand{\metaUrlColour}{}     % Unused in this template
  
 % NUMBERING BY SECTION
 \newcommand{\metaNumberEquations}{true}
