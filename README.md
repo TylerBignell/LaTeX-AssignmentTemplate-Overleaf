@@ -80,7 +80,7 @@ For a full explanation of every metadata field and what it does, see the full te
 \newcommand{\metaShowBackref}{true}            % true or false
 \newcommand{\metaShowUnusedCitations}{false}   % true or false
  
-% APPEARANCE
+% MISC
 \newcommand{\metaDefaultFont}{sans}            % sans or serif
 \newcommand{\metaLineSpacing}{onehalf}         % single, onehalf, or double
 \newcommand{\metaShowTodo}{true}               % true or false
@@ -89,9 +89,9 @@ For a full explanation of every metadata field and what it does, see the full te
  
 % COLOURS
 \newcommand{\metaThemeColour}{}   % Hex code, colour name, or leave empty for default
-\newcommand{\metaLinkColour}{}
-\newcommand{\metaCiteColour}{}
-\newcommand{\metaUrlColour}{}
+\newcommand{\metaLinkColour}{}    % Doesn't work in this template, \metaThemeColour controls this
+\newcommand{\metaCiteColour}{}    % Doesn't work in this template, \metaThemeColour controls this
+\newcommand{\metaUrlColour}{}     % Doesn't work in this template, \metaThemeColour controls this
  
 % NUMBERING BY SECTION
 \newcommand{\metaNumberEquations}{true}
