@@ -1,0 +1,224 @@
+% !TeX root = ../main.tex
+% Copyright (c) 2026 Tyler Bignell
+% Licensed under the MIT License - see LICENSE file for details
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{assets/stemtemplate-overleaf}[2026/05/10 STEM Template (Overleaf)]
+
+% CONDITIONALS
+\usepackage{xifthen}
+\usepackage{xstring}
+
+% COLOURS
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\definecolor{DefaultBlue}{HTML}{1B4F8A}
+\definecolor{YorkRedDark}{HTML}{810001}
+\definecolor{ScienceSkyBlueDark}{HTML}{065C87}
+\definecolor{LassondeNavy}{HTML}{003366}
+\providecommand{\metaThemeColour}{}
+\ifx\metaThemeColour\empty
+\colorlet{themecolour}{DefaultBlue}%
+\else
+\StrLeft{\metaThemeColour}{1}[\@firstchar]%
+\if#\@firstchar
+\StrGobbleLeft{\metaThemeColour}{1}[\@hexpure]%
+\definecolor{themecolour}{HTML}{\@hexpure}%
+\else
+\colorlet{themecolour}{\metaThemeColour}%
+\fi
+\fi
+\colorlet{linkcolour}{themecolour}
+\colorlet{citecolour}{themecolour}
+\colorlet{urlcolour}{themecolour}
+
+% PAGE GEOMETRY
+\usepackage[margin=2.54cm, headheight=14.9pt]{geometry}
+\usepackage{setspace}
+\ifthenelse{\equal{\metaLineSpacing}{single}}{\singlespacing}{}
+\ifthenelse{\equal{\metaLineSpacing}{onehalf}}{\onehalfspacing}{}
+\ifthenelse{\equal{\metaLineSpacing}{double}}{\doublespacing}{}
+\usepackage{pdflscape}
+
+% LANGUAGE
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% FONT SELECTION
+\usepackage{plex-serif}
+\IfFileExists{OT1IBMPlexSerif-TLF.fd}{%
+	\newcommand{\seriftext}[1]{{\usefont{T1}{IBMPlexSerif-TLF}{m}{n} ##1}}%
+}{%
+	\newcommand{\seriftext}[1]{{\usefont{T1}{plxSerif-TLF}{m}{n} ##1}}%
+}
+\usepackage{plex-sans}
+\IfFileExists{OT1IBMPlexSans-TLF.fd}{%
+	\newcommand{\sansseriftext}[1]{{\usefont{T1}{IBMPlexSans-TLF}{m}{n} ##1}}%
+}{%
+	\newcommand{\sansseriftext}[1]{{\usefont{T1}{plxSans-TLF}{m}{n} ##1}}%
+}
+\ifthenelse{\equal{\metaDefaultFont}{sans}}{%
+	\renewcommand{\familydefault}{\sfdefault}%
+}{%
+	\renewcommand{\familydefault}{\rmdefault}%
+}
+
+% SPACING AROUND HEADINGS
+% \usepackage{titlesec} - don't uncomment
+
+% MATH
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{siunitx}
+\sisetup{detect-all, per-mode=symbol}
+% \usepackage[version=4]{mhchem} % uncomment to use
+\ifthenelse{\equal{\metaNumberEquations}{true}}{\numberwithin{equation}{section}}{}
+
+% THEOREM ENVIRONMENTS
+\usepackage{amsthm}
+\theoremstyle{plain}
+\ifthenelse{\equal{\metaNumberTheorems}{true}}{%
+	\newtheorem{theorem}{Theorem}[section]%
+	\newtheorem{lemma}{Lemma}[section]%
+	\newtheorem{proposition}{Proposition}[section]%
+	\newtheorem{corollary}{Corollary}[section]%
+	\newtheorem{conjecture}{Conjecture}[section]%
+	\newtheorem{axiom}{Axiom}[section]%
+}{%
+	\newtheorem{theorem}{Theorem}%
+	\newtheorem{lemma}{Lemma}%
+	\newtheorem{proposition}{Proposition}%
+	\newtheorem{corollary}{Corollary}%
+	\newtheorem{conjecture}{Conjecture}%
+	\newtheorem{axiom}{Axiom}%
+}
+\theoremstyle{definition}
+\ifthenelse{\equal{\metaNumberTheorems}{true}}{%
+	\newtheorem{definition}{Definition}[section]%
+	\newtheorem{example}{Example}[section]%
+	\newtheorem{criterion}{Criterion}[section]%
+}{%
+	\newtheorem{definition}{Definition}%
+	\newtheorem{example}{Example}%
+	\newtheorem{criterion}{Criterion}%
+}
+\theoremstyle{remark}
+\ifthenelse{\equal{\metaNumberTheorems}{true}}{%
+	\newtheorem{remark}{Remark}[section]%
+	\newtheorem{note}{Note}[section]%
+}{%
+	\newtheorem{remark}{Remark}%
+	\newtheorem{note}{Note}%
+}
+
+% GRAPHICS, FIGURES & TABLES
+\usepackage{graphicx}
+\graphicspath{{figures/}{assets/}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup[table]{position=above,skip=4pt}
+\captionsetup[figure]{position=below,skip=8pt}
+\captionsetup[subfigure]{justification=centering}
+% \usepackage{pdfpages} % uncomment to use
+\ifthenelse{\equal{\metaNumberFigures}{true}}{\numberwithin{figure}{section}}{}
+\ifthenelse{\equal{\metaNumberTables}{true}}{\numberwithin{table}{section}}{}
+
+% DIAGRAMS & PLOTS — uncomment to use
+% \usepackage{tikz}
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.18}
+% \usepackage{circuitikz}
+
+% ALGORITHMS - uncomment to use
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
+% \ifthenelse{\equal{\metaNumberAlgorithms}{true}}{\numberwithin{algorithm}{section}}{}
+
+% LINKS & REFERENCES
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=linkcolour,citecolor=citecolour,urlcolor=urlcolour}
+\usepackage{cleveref}
+\crefname{equation}{Eq.}{Eqs.}
+\crefname{figure}{Fig.}{Figs.}
+\crefname{table}{Table}{Tables}
+\crefname{section}{Section}{Sections}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{axiom}{Axiom}{Axioms}
+\crefname{definition}{Definition}{Definitions}
+\crefname{example}{Example}{Examples}
+\crefname{criterion}{Criterion}{Criteria}
+\crefname{remark}{Remark}{Remarks}
+\crefname{note}{Note}{Notes}
+\crefname{problem}{Problem}{Problems}
+\crefname{lstlisting}{Listing}{Listings}
+
+% TYPOGRAPHY
+% \usepackage{microtype} - don't uncomment
+\usepackage{xurl}
+\setlength{\emergencystretch}{3em}
+\usepackage{indentfirst}
+
+% LISTS
+\usepackage{enumitem}
+
+% PROBLEM / SOLUTION ENVIRONMENTS
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\ifthenelse{\equal{\metaNumberProblems}{true}}{%
+	\newcounter{problem}[section]%
+	\renewcommand{\theproblem}{\thesection.\arabic{problem}}%
+}{%
+	\newcounter{problem}%
+	\renewcommand{\theproblem}{\arabic{problem}}%
+}
+\newenvironment{problem}[1][]{%
+	\refstepcounter{problem}%
+	\begin{tcolorbox}[enhanced,breakable,title={Problem~\theproblem\ifthenelse{\equal{#1}{}}{}{:~#1}}]}{%
+\end{tcolorbox}}
+\newenvironment{solution}{%
+	\begin{tcolorbox}[enhanced,breakable,title={Solution}]}{%
+\end{tcolorbox}}
+
+% CODE LISTINGS
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,tabsize=4,numbers=left}
+\ifthenelse{\equal{\metaNumberListings}{true}}{\AfterEndPreamble{\numberwithin{lstlisting}{section}}}{}
+\lstdefinestyle{matlab}{language=Matlab,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{red!70!black},morekeywords={classdef,properties,methods,events,enumeration,arguments,parfor,spmd}}
+\lstdefinestyle{java}{language=Java,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{red!70!black},morekeywords={var,record,sealed,permits,yield}}
+\lstdefinestyle{python}{language=Python,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{red!70!black},morekeywords={match,case,type,Self,Never,async,await}}
+\lstdefinestyle{cpp}{language=C++,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{red!70!black},morekeywords={constexpr,consteval,constinit,concept,requires,co_await,co_return,co_yield,nullptr,override,final,export,import,module}}
+\lstdefinestyle{latex}{language=[LaTeX]TeX,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{red!70!black},morekeywords={usepackage,documentclass,begin,end,newcommand,renewcommand,newenvironment,renewenvironment,setlength,addtolength,includegraphics,caption,label,ref,cref,cite,bibliography,textbf,textit,texttt,emph,frac,sqrt,sum,int,prod}}
+
+% DRAFT TOOLS
+\setlength{\marginparwidth}{2cm}
+\ifthenelse{\equal{\metaShowTodo}{true}}{%
+	\usepackage[colorinlistoftodos,prependcaption,textsize=small]{todonotes}%
+}{%
+	\usepackage[disable]{todonotes}%
+}
+\ifthenelse{\equal{\metaWatermarkText}{}}{}{%
+	\usepackage{draftwatermark}
+	\SetWatermarkText{\metaWatermarkText}
+	\SetWatermarkScale{\metaWatermarkScale}}
+% \usepackage{lipsum} - don't uncomment
+
+% HEADER & FOOTER
+\usepackage{fancyhdr}
+
+% BIBLIOGRAPHY
+\usepackage{csquotes}
+\usepackage[backend=biber,style=\metaBibStyle,sorting=none,backref=\metaShowBackref]{biblatex}
+\addbibresource{\metaBibFile}
+\ifthenelse{\equal{\metaShowUnusedCitations}{true}}{\nocite{*}}{}
