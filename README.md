@@ -33,13 +33,14 @@ Both templates use identical metadata fields, environments, and commands. Your c
 ## File Structure
  
 ```
+├── assets/
+│   ├── stemtemplate-overleaf.sty     ← Lean template (don't edit)
+│   ├── example.tex                   ← Example showing available features
+│   └── example.pdf                   ← Compiled example from the full template
+├── figures/                          ← Place your images here
 ├── main.tex                          ← Edit metadata here, compile this file
-├── content.tex (Create this)         ← Write your content here
-├── references.bib (Create this)      ← Your bibliography entries
-└── assets/
-    ├── stemtemplate-overleaf.sty     ← Lean template (don't edit)
-    ├── example.tex                   ← Example showing available features
-    └── example.pdf                   ← Compiled example from the full template
+├── content.tex (create this)         ← Write your content here and transfer to the full template
+└── references.bib (create this)      ← Your bibliography entries
 ```
  
 The `example.pdf` is compiled from the full template so you can see what the finished document looks like locally. Read it alongside `example.tex` to understand how each feature is used.
