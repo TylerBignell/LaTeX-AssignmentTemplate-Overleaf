@@ -59,8 +59,23 @@
 \usepackage{bm}
 \usepackage{siunitx}
 \sisetup{detect-all, per-mode=symbol}
-% \usepackage[version=4]{mhchem} % uncomment to use
 \ifthenelse{\equal{\metaNumberEquations}{true}}{\numberwithin{equation}{section}}{}
+
+% CHEMISTRY - uncomment ot use
+% \usepackage[version=4]{mhchem}
+\newcounter{reaction}
+\ifthenelse{\equal{\metaNumberEquations}{true}}{%
+	\counterwithin{reaction}{section}%
+	\renewcommand{\thereaction}{\arabic{section}.R\arabic{reaction}}%
+}{%
+	\renewcommand{\thereaction}{R\arabic{reaction}}%
+}
+% \newenvironment{requation}{\refstepcounter{reaction}\equation}{\tag{\thereaction}\endequation}
+% \newenvironment{ralign}{\refstepcounter{reaction}\align}{\tag{\thereaction}\endalign}
+% \newenvironment{rgather}{\refstepcounter{reaction}\gather}{\tag{\thereaction}\endgather}
+% \newenvironment{rmultline}{\refstepcounter{reaction}\multline\tag{\thereaction}}{\endmultline}
+% \newenvironment{rflalign}{\refstepcounter{reaction}\flalign}{\tag{\thereaction}\endflalign}
+% \newenvironment{ralignat}[1]{\refstepcounter{reaction}\alignat{#1}}{\tag{\thereaction}\endalignat}
 
 % THEOREM ENVIRONMENTS
 \usepackage{amsthm}
@@ -133,6 +148,7 @@
 \hypersetup{colorlinks=true,linkcolor=linkcolour,citecolor=citecolour,urlcolor=urlcolour}
 \usepackage{cleveref}
 \crefname{equation}{Eq.}{Eqs.}
+\crefname{reaction}{Rxn.}{Rxns.}
 \crefname{figure}{Fig.}{Figs.}
 \crefname{table}{Table}{Tables}
 \crefname{section}{Section}{Sections}
