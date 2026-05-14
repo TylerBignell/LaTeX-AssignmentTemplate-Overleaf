@@ -49,9 +49,9 @@ The `demo.pdf` is compiled from the full template so you can see what the finish
  
 ## Metadata
  
-The metadata block in `main.tex` controls document settings such as your name, course, and bibliography style. Most of these settings affect the title page and header, which matter more in the full template where the final formatting is applied. On Overleaf, the metadata still needs to be filled in correctly so the document compiles, but the visual output will be plainer than the final version.
+The metadata block in `main.tex` controls document settings such as your name, course, and bibliography style. Most of these settings affect the title page and header, which matter more in the full template where the final formatting is applied. On Overleaf, the metadata is less significant but relevent metadata macros still needs to be filled in correctly so the document compiles, but the visual output will be plainer than the final version.
  
-For a full explanation of every metadata field and what it does, see the full template documentation.
+For a full explanation of every metadata field and what it does, see the full template.
  
 ```latex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
