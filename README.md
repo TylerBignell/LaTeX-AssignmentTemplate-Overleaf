@@ -18,7 +18,7 @@ When your content is finished, transfer your `content.tex` file to the full temp
  
 1. Write and collaborate using this template on Overleaf
 2. Keep all your work in a `content.tex`
-3. When ready for final submission, copy `content.tex` into the full template and compile locally
+3. When ready for final submission, copy `content.tex` into the full template and compile locally.
 Both templates use identical metadata fields, environments, and commands. Your content file transfers with no changes needed.
  
 ---
