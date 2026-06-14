@@ -120,6 +120,12 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}{>{\Centering\arraybackslash}X}
+\newcolumntype{R}{>{\RaggedLeft\arraybackslash}X}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Q}[1]{>{\Centering\arraybackslash}p{#1}}
+\newcolumntype{S}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{float}
@@ -137,6 +143,7 @@
 % \usepackage{pgfplots}
 % \pgfplotsset{compat=1.18}
 % \usepackage{circuitikz}
+% \usepackage{pgf-pie}
 
 % ALGORITHMS - uncomment to use
 % \usepackage{algorithm}
@@ -172,6 +179,7 @@
 \usepackage{xurl}
 \setlength{\emergencystretch}{3em}
 \usepackage{indentfirst}
+\usepackage{ragged2e}
 
 % LISTS
 \usepackage{enumitem}
