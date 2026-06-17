@@ -114,9 +114,18 @@
 	\newtheorem{note}{Note}%
 }
 
-% GRAPHICS, FIGURES & TABLES
+% FIGURES
 \usepackage{graphicx}
 \graphicspath{{figures/}{assets/}}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{pdfpages}
+\captionsetup[figure]{position=below,skip=8pt}
+\captionsetup[subfigure]{justification=centering}
+\ifthenelse{\equal{\metaNumberFigures}{true}}{\numberwithin{figure}{section}}{}
+
+% TABLES
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
@@ -128,14 +137,8 @@
 \newcolumntype{S}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
 \usepackage{multirow}
 \usepackage{longtable}
-\usepackage{float}
-\usepackage{subcaption}
-\usepackage{caption}
 \captionsetup[table]{position=above,skip=4pt}
-\captionsetup[figure]{position=below,skip=8pt}
-\captionsetup[subfigure]{justification=centering}
-% \usepackage{pdfpages} % uncomment to use
-\ifthenelse{\equal{\metaNumberFigures}{true}}{\numberwithin{figure}{section}}{}
+\captionsetup[longtable]{hypcap=false,justification=raggedright,singlelinecheck=false}
 \ifthenelse{\equal{\metaNumberTables}{true}}{\numberwithin{table}{section}}{}
 
 % DIAGRAMS & PLOTS - uncomment to use
